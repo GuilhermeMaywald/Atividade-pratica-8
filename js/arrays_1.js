@@ -16,29 +16,31 @@ d. Se o usuário optar por adicionar o produto, receba o valor utilizando a fun�
 */
 
 {
-    let arrMercado = [['0', 'Sem cadastro'], ['1', 'Leite'], ['2', 'Ovo'], ['3', 'Farinha'], ['4', 'Milho'], ['5', 'Café']];
-    let codProduto = prompt('Digite o código do produto: ');
-    let incluirProduto = '';
+    let arrMercado = [
+      "Sem cadastro",
+      "Leite",
+      "Ovo",
+      "Farinha",
+      "Milho",
+      "Café",
+    ];
+  
+    let codProduto = Number(prompt("Digite o código do produto: "));
+    let mensagem = "";
     let encontrarProduto = '';
-    let mensagem = '';
-
-    for (let produto of arrMercado) {
-        encontrarProduto = produto.indexOf(codProduto);
-        if (encontrarProduto != -1) {
-            mensagem = produto[1];
-            break;
-        } else if (encontrarProduto != codProduto){
-            mensagem = prompt(`${arrMercado[0][1]}, Deseja incluir produto?`);
-            if (mensagem == 'sim'){
-                mensagem = prompt('Digite novo produto');
-                incluirProduto = produto.push(arrMercado);
-                mensagem = `Produto cadastrado com sucesso: ${produto}`; 
-                break;
-            }
-        } else {
-            mensagem = arrMercado[0][1];
+    let incluiProduto = '';
+    encontrarProduto = arrMercado[codProduto];
+  
+    if (encontrarProduto != '' && codProduto != 0){
+      mensagem = (encontrarProduto);
+    } else {
+      mensagem = prompt('Produto não cadastrado, deseja adicionar o produto?');
+        if (mensagem == 'sim'){
+            incluiProduto = (prompt('Digite novo produto.'));
+            arrMercado.push(incluiProduto);
+            mensagem = (`Produto incluído com sucesso: ${incluiProduto}`);
         }
     }
     alert(mensagem);
+    alert(arrMercado);
 }
-
