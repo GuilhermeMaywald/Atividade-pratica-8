@@ -38,7 +38,7 @@ d. Se o usuário optar por adicionar o produto, receba o valor utilizando a fun�
         if (mensagem == 'sim'){
             incluiProduto = (prompt('Digite novo produto.'));
             arrMercado.push(incluiProduto);
-            mensagem = (`Produto incluído com sucesso: ${incluiProduto}`);
+            mensagem = (`Produto incluído com sucesso: ${incluiProduto.indexOf()} ${incluiProduto}`);
         } else {
             mensagem = 'Obrigado por consultar.'
         }
